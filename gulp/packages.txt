@@ -1,0 +1,38 @@
+====== SCSS --> CSS ======
+1. npm i gulp-sass sass -D
+ - const scss = require('gulp-sass')(require('sass'));
+
+====== AUTOPREFIXER for css ======
+1. npm i gulp-autoprefixer -D 
+!!! to use CommonJS require install "gulp-autoprefixer": "^8.0.0"
+
+====== CONCAT files and CHANGE NAME ======
+1. npm i gulp-concat -D
+
+====== COMPRESS JS files ======
+1. npm i gulp-uglify-es -D
+ - const uglify = require('gulp-uglify-es').default;
+
+====== IMAGES ======
+1. npm i gulp-avif -D
+2. npm i gulp webp -D 
+ - !!! to use CommonJS require install "gulp-webp": "^4.0.1"
+3. npm i gulp-imagemin@7.1.0 -D
+4. npm i gulp-svg-sprite -D
+
+====== FONTS ======
+1.npm i gulp-fonter -D
+2. npm i gulp-ttf2woff2 -D
+
+====== INCLUDES HTML without preprocessor (PUG..) ======
+1.npm i gulp-include -D
+
+====== AUTO UPDATE page ======
+1. npm i browser-sync -D
+ - const browserSync = require("browser-sync").create();
+
+====== DELETE files ======
+1. npm i gulp-clean -D
+
+====== CACHE ======
+1. npm i gulp-newer
