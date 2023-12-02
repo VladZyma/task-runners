@@ -1,0 +1,16 @@
+.main {
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  .main_inner {
+    margin: 0;
+    padding: 15px;
+    display: grid;
+    background: #000;
+  }
+}
+
+h1 {
+  color: "velvet";
+}
