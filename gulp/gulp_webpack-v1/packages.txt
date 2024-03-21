@@ -1,0 +1,162 @@
+============================
+======= SCSS --> CSS =======
+============================
+1. npm i gulp-sass sass -D
+ - const scss = require('gulp-sass')(require('sass'));
+
+2. use global imports
+npm i gulp-sass-glob -D
+
+WITHOUT gulp-sass-glob
+@import "./blocks/header";
+@import "./blocks/footer";
+
+WITH gulp-sass-glob
+@import "./blocks/*.scss";
+
+================================
+======= CSS AUTOPREFIXER =======
+================================
+1. npm i gulp-autoprefixer@8 -D
+!!! установится 8 версия, более новые версии подключаются как JS modules !!!
+настройки добавить в package.json  "browserslist": [ "last 5 versions" ]
+
+==========================================
+======= CSS MEDIA QUERIES GROUPING =======
+==========================================
+1. npm i gulp-group-css-media-queries -D
+!!!! ломает работу CSS maps (неправильные адреса исходных файлов) !!!!
+!!!! лучше использовать для финальной продакшн сборки !!!!
+
+========================
+======= CSS maps =======
+========================
+1. исходные карты для CSS
+npm i gulp-sourcemaps -D
+!!!! использовать только при разработке без CSS MEDIA QUERIES GROUPING !!!!
+
+==========================
+======= MINIFY CSS =======
+==========================
+1. npm i gulp-csso -D
+
+============================
+======= HTML include =======
+============================
+1. npm i gulp-file-include -D
+
+===========================
+======= MINIFY HTML =======
+===========================
+1. npm i gulp-htmlclean -D
+
+====================================
+======= DELETE files/folders =======
+====================================
+1. npm i gulp-clean -D
+
+==================================
+======= LIVE RELOAD SERVER =======
+==================================
+1. npm i gulp-server-livereload -D
+
+============================
+======= IMAGE + WEBP =======
+============================
+1. npm i gulp-imagemin@7 -D
+!!! установится 7 версия, более новые версии подключаются как JS modules !!!
+2. npm i imagemin-webp@6 -D
+!!! установится 6 версия, более новые версии подключаются как JS modules !!!
+3. npm i gulp-ext-replace -D
+
+==================================
+======= WEBP in HTML & CSS =======
+==================================
+1. авто добавление поддержки webp в html
+npm i gulp-webp-retina-html -D
+<picture>
+  <source srcset="./img/wwdc-2019.webp" type="image/webp"/>
+  <img src="./img/wwdc-2019.jpg" alt="wwdc-2019" />
+</picture>
+
+2. авто добавление поддержки webp в css
+npm i gulp-webp-css -D
+body {
+  background-image:url(../img/windows-opera.jpeg);
+  background-size:cover;
+  opacity:.2
+}
+@supports (-webkit-appearance:none) {
+  body {
+    background-image:url(../img/windows-opera.webp)
+  }
+}
+
+==========================
+======= SVG SPRITE =======
+==========================
+1. npm i gulp-svg-sprite -D
+
+===============================================
+======= АВТО ИСПРАВЛЕНИЕ ПУТЕЙ К ФАЙЛАМ =======
+===============================================
+1. npm i gulp-replace -D
+при разработке позволяет использовать путь к файлу в зависимости от структуры файлов в папке src
+при сборке путь к файлу автоматически исправляется в зависимости от структуры файлов в папке build, docs...
+./../img/bg.jpg --> ./img/bg.jpg
+
+==================================================
+======= FONT + @font-face AUTO GENERATION  =======
+==================================================
+1. npm i gulp-fonter-fix -D
+2. npm i gulp-ttf2woff2 -D
+использование описано в fontsDev.js, fontsDocs.js, gulpfile.js
+
+========================
+======= TYPOGRAF =======
+========================
+1. при изменении размера экрана строки с текстом правильно переносятся не разрывая предлоги, многопробельные отступы....
+npm i gulp-typograf -D
+
+=====================
+======= FILES =======
+=====================
+1. при добавлении новых файлов gulp не будет обрабатывать уже обработанные файлы
+npm i gulp-changed@4 -D
+!!! установится 4 версия, более новые версии подключаются как JS modules !!!
+
+=======================
+======= BUG fix =======
+=======================
+1.пропуск ошибок в тасках при сборке
+npm i gulp-plumber -D
+
+============================
+======= NOTIFICATION =======
+============================
+1. npm i gulp-notify -D
+
+=======================
+======= WEBPACK =======
+=======================
+1. запускает webpack для gulp
+npm i webpack-stream -D 
+
+2. загрузка css стилей в js (css in js), исп. при подключении готовых npm пакетов 
+npm i style-loader -D
+
+3. npm i css-loader -D
+
+=====================
+======= BABEL =======
+=====================
+1. npm i gulp-babel -D
+настройки babel: in package.json "babel": { "presets": ["@babel/preset-env"] }
+
+2. npm i @babel/core -D
+3. npm i @babel/preset-env -D
+
+===========================================
+======= npm package air-datepicker  =======
+===========================================
+1. npm i air-datepicker -S

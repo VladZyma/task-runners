@@ -1,0 +1,81 @@
+================================================
+==== RETINA backround-image USING image-set ====
+================================================
+.box {
+
+backround-image: image-set(
+	url('./../img/bg.jpg') 1x,
+	url('./../img/bg@2x.jpg') 2x
+);
+
+}
+
+=============================================
+==== RETINA backround-image USING @media ====
+=============================================
+
+.box {
+
+	backround-image: url('./../img/bg.jpg);
+	background-position: center center;
+	backround-size: cover;
+	backround-repeat: no-repeat;
+
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		backround-image: url('./../img/bg@2x.jpg)
+	 }
+
+}
+
+================================================
+==== IMAGE IN HTML INCLUDING RETINA DISPLAY ====
+================================================
+
+<img src='./../img/picture.jpg' srcset='./../img/picture@2x.jpg' alt='' />
+
+WEBP and AVIF
+
+<picture>
+    <source type="image/avif" srcset="./img/show.avif 1x, ./img/show@2x.avif 2x" />
+    <source type="image/webp" srcset="./img/show.webp 1x, ./img/show@2x.webp 2x" />
+    <source type="image/jpeg" srcset="./img/show.jpg 1x, ./img/show@2x.jpg 2x" />
+    <img src="./img/show.png" alt='' />
+</picture>
+
+====================
+==== SVG sprite ====
+====================
+
+Иконки размещаем в папку: src/img/svgicons
+Готовый файл со спрайтом собирается в: build/img/svgsprite/sprite.symbol.svg
+
+В спрайте каждой иконке добавляется id котовый = ее названию
+heart-line.svg --> id='heart-line'
+Поэтому в пути к икнке прописываем ее id --> './img/svgsprite/sprite.symbol.svg#heart-line'
+
+HTML code
+
+<svg class='icon icon--heart-line'>
+	<use href='./img/svgsprite/sprite.symbol.svg#heart-line'></use>
+</svg>
+
+<svg class='icon icon--user-star'>
+	<use href='./img/svgsprite/sprite.symbol.svg#user-star'></use>
+</svg>
+
+CSS code
+
+.icon {
+	fill: transparent;
+	stroke: transparent;
+	width: 40px;
+	height: 40px;
+}
+
+.icon--heart-line {
+	fill: rgb(241, 68, 131);
+}
+
+.icon--user-star {
+	fill: rgb(26, 134, 235);
+}

@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--text-color);
+  background-image: url(../img/bg/windows-opera.jpeg);
+  background-size: cover;
+  opacity: 0.8;
+}
